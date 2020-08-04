@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import SlickSlider from 'react-slick';
-/*essa lib precisa ser instalada e de 2 arquivos de CSS, links no index.html*/
+/* essa lib precisa ser instalada e de 2 arquivos de CSS, links no index.html */
 import styled from 'styled-components';
 
 const Container = styled.ul`
@@ -17,7 +17,7 @@ const Container = styled.ul`
     height: 30px;
     transform: initial;
     &:before {
-      font-size: 30px;
+      font-size: 40px;
     }
   }
   
@@ -30,6 +30,8 @@ const Container = styled.ul`
 `;
 
 export const SliderItem = styled.li`
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-right: 16px;
   img {
     margin: 16px;
@@ -39,16 +41,17 @@ export const SliderItem = styled.li`
   }
 `;
 
-
 const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
       dots: false,
-      infinite: false,
-      speed: 300,
+      infinite: true,
+      speed: 600,
       centerMode: false,
       variableWidth: true,
       adaptiveHeight: true,
+      rtl: true,
+      slidesToScroll: 1,
     }}
     >
       {children}
@@ -56,4 +59,4 @@ const Slider = ({ children }) => (
   </Container>
 );
 
-export default Slider; 
+export default Slider;

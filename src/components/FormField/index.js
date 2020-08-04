@@ -80,7 +80,7 @@ function FormField({
         htmlFor={fieldId}
       >
         <Input
-          as={tag} //JSX
+          as={tag}
           id={fieldId}
           type={type}
           value={value}
